@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const App());
+  runApp(App());
 }
 
 /// We are using a StatefulWidget such that we only create the [Future] once,
