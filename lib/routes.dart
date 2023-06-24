@@ -6,8 +6,8 @@ import 'package:quzzer/home/home.dart';
 
 var appRoutes = {
   '/': (context) => HomeScreen(),
-  'login': (context) => LoginScreen(),
-  'topics': (context) => TopicsScreen(),
-  'profile': (context) => ProfileScreen(),
-  'about': (context) => AboutScreen(),
+  '/login': (context) => LoginScreen(),
+  '/topics': (context) => TopicsScreen(),
+  '/profile': (context) => ProfileScreen(),
+  '/about': (context) => AboutScreen(),
 };
