@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 // Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 import 'package:quzzer/routes.dart';
+import 'package:quzzer/services/firestore.dart';
+import 'package:quzzer/services/models.dart';
 import 'package:quzzer/themes.dart';
 
 void main() {
@@ -40,16 +43,18 @@ class _AppState extends State<App> {
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           print("firebase setup completed");
-          return MaterialApp(
-            routes: appRoutes,
-            theme: appTheme,
+          return StreamProvider(
+            create: (context) => FirestoreService().streamReport(),
+            initialData: Report(),
+            child: MaterialApp(
+              routes: appRoutes,
+              theme: appTheme,
+            ),
           );
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return const Text(
-            'loading',
-        textDirection: TextDirection.ltr);
+        return const Text('loading', textDirection: TextDirection.ltr);
       },
     );
   }

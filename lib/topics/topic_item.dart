@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quzzer/topics/topic_screen.dart';
 
 import '../services/models.dart';
@@ -9,6 +10,8 @@ class TopicItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Report report = Provider.of<Report>(context);
+
     return Hero(
         tag: topic.img,
         child: Card(

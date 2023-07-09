@@ -6,6 +6,7 @@ import 'package:quzzer/topics/topic_item.dart';
 import '../services/models.dart';
 import '../shared/error.dart';
 import '../shared/loading.dart';
+import 'drawer.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({super.key});
@@ -28,6 +29,7 @@ class TopicsScreen extends StatelessWidget {
               backgroundColor: Colors.deepPurple,
               title: const Text('Topics'),
             ),
+            drawer: TopicDrawer(topics: topics),
             body: GridView.count(
               crossAxisCount: 2,
               primary: false,
